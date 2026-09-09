@@ -1,19 +1,33 @@
-secret = 27
+secret = 35
+attempts = 0
+won = False
 
-print("Welcome to the Number Guessing Game!")
-print("Guess a number between 1 and 50!")
-print("You only have 5 attempts to guess the correct number!")
-print("Guess wisely! Good luck!")
+while attempts < 5 and won == False:
+    guess = int(input("Guess a number between 1 and 50: "))
+    attempts = attempts + 1
 
-guess = int(input("Enter a number: "))
+    if guess == secret:
+        print("You win!")
+        won = True
 
-while guess != secret:
-    if guess < secret:
-        print("Your guess is too low. Try again!")
-        break
-    elif guess > secret:
-        print("Your guess is too high. Try again!")
-        break
-else:
-    print("Congratulations! You guessed the correct number!")
-    
+    else:
+        difference = abs(secret - guess)
+
+        if difference <= 5:
+            print("Hot!")
+        elif difference <= 10:
+            print("Warm!")
+        elif difference <= 20:
+            print("Cold!")
+        else:
+            print("Ice cold!")
+
+        print("Remaining lives: ", end="")
+
+        for i in range(5 - attempts):
+            print("❤️", end="")
+
+        print()
+
+if won == False:
+    print("You lose! The secret number was", secret)

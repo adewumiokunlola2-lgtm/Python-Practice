@@ -1,4 +1,17 @@
 def add(a, b):
-    return a + b
-result = add(1, 2)
-print(result)
+    pass
+
+def subtract(a, b):
+    pass
+
+def multiply(a, b):
+    pass
+
+def divide(a, b):
+    pass
+
+print("=" * 36)
+print("     🧮  FUNCTION CALCULATOR")
+print("=" * 36)
+print("Operations: add | subtract | multiply | divide")
+print()

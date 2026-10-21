@@ -1,26 +1,28 @@
-student_dict = {"Josh": 85, "Katie": 89, "Naomi": 94, "Layla": 76, "Nathan": 97}
+grades = {"Alice": 85, "Bob": 89, "Charlie": 94, "David": 76, "Eve": 97}
+print(grades)
 
 total = 0
 
-for i in student_dict.values():
+for i in grades.values():
     total = total + i
 
-print(total)
+print("Total scores:", total)
 
-average = total / len(student_dict)
-print(average)
+average = total / len(grades)
+print("Average:", average)
 
-highest_score = max(student_dict)
-print(highest_score)
+highest_score = max(grades)
+print("Highest score:", highest_score)
 
-lowest_score = min(student_dict)
-print(lowest_score)
+lowest_score = min(grades)
+print("Lowest score:", lowest_score)
 
 student_name = input("Enter a student's name: ")
 
-for i in student_dict:
+
+for i in grades:
     if student_name == i:
-        print(student_dict[i])
+        print(grades[i])
     else:
         print("This student does not exist.")
         exit()
